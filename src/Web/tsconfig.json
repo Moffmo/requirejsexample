@@ -1,20 +1,27 @@
 ﻿{
     "compilerOptions": {
-        "module": "amd",
+        // Checks
         "noImplicitAny": true,
         "noFallthroughCasesInSwitch": true,
         "noImplicitThis": true,
         "noUnusedLocals": true,
         "noUnusedParameters": false,
+        "strictNullChecks": true,
+        "noImplicitReturns": true,
+        "noImplicitUseStrict": false,
+
+        // Decorators
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+
+        // React
         "jsx": "react",
+
+        // Output
+        "module": "amd",
         "outDir": "./wwwroot/js/generated"
     },
     "include": [
-        "./typings/index.d.ts",
         "./Scripts/**/*"
-    ],
-    "exclude": [
-        "./node_modules",
-        "./bower_components"
     ]
 }

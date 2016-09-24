@@ -1,15 +1,18 @@
 ﻿
 console.log('Loading init');
 
-const _handlers: (() => void)[] = [];
+type HANDLER = () => void;
+
+const _handlers: HANDLER[] = [];
 var _ready = false;
 
 function completed() {
     _ready = true;
     document.removeEventListener('DOMContentLoaded', completed);
     window.removeEventListener('load', completed);
-    while (_handlers.length) {
-        var handler = _handlers.pop();
+
+    var handler: HANDLER | undefined;
+    while (handler = _handlers.pop()) {
         handler();
     }
 }
